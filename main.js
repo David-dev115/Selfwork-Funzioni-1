@@ -16,43 +16,33 @@
 function Gioco_dadi (nr_tiri) {
 
     let punteggio_giocatore_1 = 0;
-
-    for (let i = 1; i <= nr_tiri; i++) {
-
-        let random = Math.floor(Math.random() * (6 - 1) + 1);
-
-        punteggio_giocatore_1 = punteggio_giocatore_1 + random;
-
-        console.log(`al tiro ${i} il Giocatore 1 ha estratto il nr ${random}`);
-
-        // console.log(`Il punteggio totale del Giocatore 1 è ${punteggio_giocatore_1}`);
-        
-        
-        
-
-    }
-
     let punteggio_giocatore_2 = 0;
 
     for (let i = 1; i <= nr_tiri; i++) {
 
+        let random = Math.floor(Math.random() * (6 - 1) + 1);
         let random_2 = Math.floor(Math.random() * (6 - 1) + 1);
 
+        punteggio_giocatore_1 = punteggio_giocatore_1 + random;
         punteggio_giocatore_2 = punteggio_giocatore_2 + random_2;
 
-        console.log(`al tiro ${i} il Giocatore 2 ha estratto il nr ${random_2}`);
-
-        // console.log(`Il punteggio totale del Giocatore 2 è ${punteggio_giocatore_2}`);
+        console.log(`al tiro ${i} il Giocatore 1 ha estratto il nr ${random}`);
+        console.log(`al tiro ${i} il Giocatore 2 ha estratto il nr ${random_2}`);   
 
     }
 
+ 
 
     switch (true) {
         case punteggio_giocatore_1 > punteggio_giocatore_2:
             console.log( `Il giocatore 1 ha vinto totalizzando ${punteggio_giocatore_1}`);
             break;
+
+        case punteggio_giocatore_1 < punteggio_giocatore_2:
+            console.log( `Il giocatore 2 ha vinto totalizzando ${punteggio_giocatore_2}`);
+            break;
     
-        default: console.log( `Il giocatore 2 ha vinto totalizzando ${punteggio_giocatore_2}`);
+        default: console.log( `Parità : entrambi i giorcatori hanno totalizzato ${punteggio_giocatore_2}`);
             break;
     }
 
